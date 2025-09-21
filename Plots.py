@@ -1,0 +1,87 @@
+# --- Plot remaining particles over time ---
+labels = ['Aa', 'Ab', 'Ba', 'Bb']
+colors = ['red', 'orange', 'blue', 'cyan']
+
+plt.figure(figsize=(12.8, 9.6))
+plt.plot(times, errors, lw=3)
+plt.xlabel("Time [yr]", fontsize=24)
+plt.ylabel("Relative Energy Error", fontsize=24)
+plt.title("Relative Energy Error Over Time", fontsize=28)
+plt.xticks(fontsize=20)
+plt.yticks(fontsize=20)
+plt.grid()
+
+plt.figure(figsize=(12.8, 9.6))
+plt.plot(times, numRemainings, lw=3)
+plt.xlabel("Time [yr]", fontsize=24)
+plt.ylabel("Remaining Test Particles", fontsize=24)
+plt.title("Test Particle Survival Over Time", fontsize=28)
+plt.xticks(fontsize=20)
+plt.yticks(fontsize=20)
+plt.grid()
+
+plt.figure(figsize=(12.8, 9.6))
+plt.plot(times, numEjected, lw=3)
+plt.xlabel("Time [yr]", fontsize=24)
+plt.ylabel("Ejected Test Particles", fontsize=24)
+plt.title("Ejected Test Particles Over Time", fontsize=28)
+plt.xticks(fontsize=20)
+plt.yticks(fontsize=20)
+plt.grid()
+
+plt.figure(figsize=(12.8, 9.6))
+plt.plot(times, numIncinerated, lw=3)
+plt.xlabel("Time [yr]", fontsize=24)
+plt.ylabel("Incinerated Test Particles", fontsize=24)
+plt.title("Incinerated Test Particles Over Time", fontsize=28)
+plt.xticks(fontsize=20)
+plt.yticks(fontsize=20)
+plt.grid()
+
+# Plot disk particles (initial and final) with stars
+plt.figure(figsize=(12, 12))
+plt.scatter(x[4:, 0], y[4:, 0], color='gray', s=8, label="Disk start")
+plt.scatter(x[4:, 1], y[4:, 1], color='black', s=4, label="Disk end")
+for j in range(4):
+    plt.plot(x[j, 0], y[j, 0], 'o', color=colors[j], label=f"{labels[j]} (start)", markersize=12)
+    plt.plot(x[j, 1], y[j, 1], 's', color=colors[j], label=f"{labels[j]} (end)", markersize=10)
+plt.xlim(-2000, 4000)
+plt.ylim(-2000, 4000)
+plt.xlabel("x [AU]", fontsize=24)
+plt.ylabel("y [AU]", fontsize=24)
+plt.title("Start vs End Positions of Stars and Disk Particles", fontsize=28)
+plt.xticks(fontsize=20)
+plt.yticks(fontsize=20)
+plt.grid()
+plt.legend(markerscale=2)
+
+# Plot disk particles (initial and final) with stars
+plt.figure(figsize=(12, 12))
+plt.scatter(x[4:, 0], y[4:, 0], color='gray', s=4, label="Disk start")
+for j in range(4):
+    plt.plot(x[j, 0], y[j, 0], 'o', color=colors[j], label=f"{labels[j]} (start)", markersize=10)
+plt.xlim(-2000, 4000)
+plt.ylim(-2000, 4000)
+plt.xlabel("x [AU]", fontsize=24)
+plt.ylabel("y [AU]", fontsize=24)
+plt.title("Start Positions of Stars and Disk Particles", fontsize=28)
+plt.xticks(fontsize=20)
+plt.yticks(fontsize=20)
+plt.grid()
+plt.legend(markerscale=2)
+
+# Plot disk particles (initial and final) with stars
+plt.figure(figsize=(12, 12))
+plt.scatter(x[4:, 1], y[4:, 1], color='black', s=4, label="Disk end")
+for j in range(4):
+    plt.plot(x[j, 1], y[j, 1], 'o', color=colors[j], label=f"{labels[j]} (end)", markersize=10)
+plt.xlim(-2000, 4000)
+plt.ylim(-2000, 4000)
+plt.xlabel("x [AU]", fontsize=24)
+plt.ylabel("y [AU]", fontsize=24)
+plt.title("End Positions of Stars and Disk Particles", fontsize=28)
+plt.xticks(fontsize=20)
+plt.yticks(fontsize=20)
+plt.grid()
+plt.legend(markerscale=2)
+plt.show()
