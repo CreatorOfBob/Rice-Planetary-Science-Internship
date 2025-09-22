@@ -1,11 +1,3 @@
-!pip install rebound
-import rebound
-import math
-import random as rand
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-
 sim = rebound.Simulation()
 sim.units = ('AU', 'yr', 'Msun')
 sim.integrator = "ias15"
