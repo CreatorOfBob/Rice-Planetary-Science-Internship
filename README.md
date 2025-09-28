@@ -30,3 +30,13 @@ Import all the libraries in Libraries.py for the Python code to work
       Used to update the acceleration vector
     E(Body[] bodies)
       Used to calculate the total energy of the system
+  ### Leapfrog.java
+    Has an implementation of the leapfrog algorithm with 3 sun-like stars in an equilateral triangle
+  ### LeapfrogExample.java
+    Has the Sun-Earth-Moon system in my leapfrog code
+## Suns in a Geometric Configuration
+  I put some Suns in geometric shapes to see how they move
+  ### EquilateralTriangle.py
+    Equilateral triangle is already solved by Lagrange in 1772 and is shown here
+  ### Square.py
+    Square is not solved, and the stars move chaotically, pairing off and re-pairing off
